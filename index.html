@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLOZEL STORE - PC, High-Tech & Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',Arial,sans-serif;background:#f5f6f8;color:#111}
+button{cursor:pointer;border:0}
+.top{background:#0f172a;color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:30}
+.logo-img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #f59e0b;background:#000}
+.logo{font-weight:900;font-size:19px;line-height:1}
+.logo span{color:#f59e0b}
+.logo small{display:block;font-size:10px;color:#cbd5e1;letter-spacing:1px}
+.search{flex:1}
+.search input{width:100%;padding:12px;border-radius:12px;border:0}
+.wa-top{background:#22c55e;color:#fff;padding:11px 14px;border-radius:12px;font-weight:800;text-decoration:none;font-size:12px;white-space:nowrap}
+.tabs{display:flex;gap:8px;overflow:auto;padding:12px 16px;background:#fff;position:sticky;top:80px;z-index:20;border-bottom:1px solid #e5e7eb}
+.tab{padding:11px 18px;border-radius:25px;background:#f1f5f9;border:1px solid #e5e7eb;font-weight:700;font-size:13px;white-space:nowrap}
+.tab.active{background:#0f172a;color:#fff;border-color:#0f172a}
+.tab.active.gold{background:#f59e0b;color:#000;border-color:#f59e0b}
+.page{display:none;padding:16px;max-width:1200px;margin:auto}
+.page.active{display:block}
+.cat-head{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;border-radius:18px;padding:22px;text-align:center;margin-bottom:16px}
+.cat-head img{width:95px;height:95px;border-radius:50%;object-fit:cover;border:3px solid #f59e0b;background:#000;margin-bottom:10px}
+.cat-head h2{font-size:22px}
+.cat-head h2 span{color:#f59e0b}
+.cat-head p{color:#cbd5e1;font-size:13px;margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;overflow:hidden}
+.card-img{height:150px;background:linear-gradient(135deg,#e2e8f0,#f8fafc);display:flex;align-items:center;justify-content:center;font-size:65px;position:relative}
+.badge{position:absolute;top:10px;left:10px;background:#ef4444;color:#fff;font-size:11px;padding:4px 8px;border-radius:20px;font-weight:800}
+.badge2{position:absolute;top:10px;right:10px;background:#f59e0b;color:#000;font-size:11px;padding:4px 8px;border-radius:20px;font-weight:800}
+.card-body{padding:14px}
+.card-body h4{font-size:14px;line-height:1.3;min-height:38px}
+.card-body p{font-size:12px;color:#64748b;margin:6px 0}
+.price{font-weight:900;font-size:17px}
+.old{font-size:12px;color:#94a3b8;text-decoration:line-through}
+.order{display:block;text-align:center;background:#22c55e;color:#fff;padding:10px;border-radius:10px;margin-top:10px;text-decoration:none;font-size:12px;font-weight:800}
+.svc{background:#111;color:#fff;border-radius:18px;padding:22px;margin-bottom:14px}
+.svc h3{font-size:18px}
+.svc p{font-size:13px;color:#cbd5e1;margin:8px 0;line-height:1.6}
+.svc .price{color:#f59e0b;font-size:20px}
+.tag{display:inline-block;background:#f59e0b;color:#000;font-size:11px;padding:5px 10px;border-radius:20px;font-weight:800;margin-bottom:10px}
+.svc a{display:block;text-align:center;background:#22c55e;color:#fff;padding:12px;border-radius:10px;text-decoration:none;font-weight:800;font-size:13px;margin-top:12px}
+.profile{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.profile img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #f59e0b}
+.footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:18px;font-size:13px;margin-top:20px}
+.footer b{color:#fff}
+</style>
+</head>
+<body>
+<div class="top">
+<img class="logo-img" src="https://i.postimg.cc/4xvGVsC7/Whats-App-Image-2026-11-08-at-18-03-06.webp">
+<div class="logo">CLOZEL <span>STORE</span><small>PC • HIGH-TECH • SERVICES</small></div>
+<div class="search"><input placeholder="Rechercher..."></div>
+<a class="wa-top" href="https://wa.me/2290129783460" target="_blank">💬 WhatsApp</a>
+</div>
+<div class="tabs">
+<button class="tab active" onclick="showPage('accueil',this)">🏠 Accueil</button>
+<button class="tab" onclick="showPage('gamer',this)">🎮 PC Gamer</button>
+<button class="tab" onclick="showPage('ordi',this)">💻 Ordinateurs</button>
+<button class="tab" onclick="showPage('imp',this)">🖨️ Imprimantes</button>
+<button class="tab" onclick="showPage('gadgets',this)">🎧 Gadgets</button>
+<button class="tab gold" onclick="showPage('services',this)">🔧 Services</button>
+</div>
+<div class="page active" id="accueil">
+<div class="cat-head"><img src="https://i.postimg.cc/4xvGVsC7/Whats-App-Image-2026-11-08-at-18-03-06.webp"><h2>Bienvenue chez <span>CLOZEL STORE</span></h2><p>PC Gamer • Ordinateurs • Imprimantes • Gadgets • Installation • Montage<br>Abomey-Calavi & Cotonou - Livraison 24h - 01 29 78 34 60</p></div>
+<div class="grid">
+<div class="card"><div class="card-img">🎮</div><div class="card-body"><h4>PC Gamer - Voir l'onglet PC Gamer</h4><p>OMEN, Legion, MSI Vector dès 795.000 CFA</p><button class="order" onclick="showPage('gamer',document.querySelectorAll('.tab')[1])">Voir PC Gamer →</button></div></div>
+<div class="card"><div class="card-img">💻</div><div class="card-body"><h4>Ordinateurs - Voir l'onglet Ordinateurs</h4><p>HP ZBook 280.000 CFA - HP ProBook - HP Envy</p><button class="order" onclick="showPage('ordi',document.querySelectorAll('.tab')[2])">Voir Ordinateurs →</button></div></div>
+<div class="card"><div class="card-img">🖨️</div><div class="card-body"><h4>Imprimantes - Voir l'onglet Imprimantes</h4><p>HP LaserJet dès 205.000 CFA</p><button class="order" onclick="showPage('imp',document.querySelectorAll('.tab')[3])">Voir Imprimantes →</button></div></div>
+<div class="card"><div class="card-img">🔧</div><div class="card-body"><h4>Services - Installation & Montage</h4><p>Windows, Logiciels, Montage PC - Devis Gratuit</p><button class="order" style="background:#f59e0b;color:#000" onclick="showPage('services',document.querySelectorAll('.tab')[5])">Voir Services →</button></div></div>
+</div>
+<div class="profile"><img src="https://i.postimg.cc/4xvGVsC7/Whats-App-Image-2026-11-08-at-18-03-06.webp"><div><h3>Clozel DSS - Fondateur</h3><p style="font-size:13px;color:#64748b">📍 Abomey-Calavi | 📞 01 29 78 34 60<br>✅ Neufs scellés - Garantie 1 an - Paiement MoMo / Espèces</p></div></div>
+</div>
+<div class="page" id="gamer">
+<div class="cat-head"><img src="https://i.postimg.cc/4xvGVsC7/Whats-App-Image-2026-11-08-at-18-03-06.webp"><h2>🎮 <span>CLOZEL STORE</span> - PC GAMER</h2><p>Les PC les plus puissants pour jouer sans lag - Neufs scellés</p></div>
+<div class="grid">
+<div class="card"><div class="card-img">🎮<span class="badge">PROMO</span></div><div class="card-body"><h4>HP OMEN 15-ga0095n Core i5-14500HX RTX</h4><p>PC Gamer RTX - Neuf</p><div class="price">795.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20OMEN%2015%20-%20795.000%20CFA" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🔥</div><div class="card-body"><h4>MSI Vector 16 HX Core Ultra 7 255HX RTX</h4><p>PC Gamer 16" Puissant</p><div class="price">1.395.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20MSI%20Vector%2016" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">💻</div><div class="card-body"><h4>Lenovo Legion 5 15AHP11 AMD Ryzen 7</h4><p>PC Gamer Legion</p><div class="price">1.260.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20Lenovo%20Legion%205" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🎮</div><div class="card-body"><h4>HP OMEN 16 Core Ultra 9 285H RTX 5070</h4><p>Ultra Puissant</p><div class="price">1.465.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20OMEN%2016" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🖥️</div><div class="card-body"><h4>Desktop Gaming MSI Codex R2 AI Core Ultra</h4><p>Tour Gaming</p><div class="price">1.695.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20MSI%20Codex%20R2" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🖥️</div><div class="card-body"><h4>Desktop Gaming MSI Aegis R2 Core i9</h4><p>Tour Haut de Gamme</p><div class="price">1.995.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20MSI%20Aegis%20R2" target="_blank">Commander</a></div></div>
+</div>
+</div>
+<div class="page" id="ordi">
+<div class="cat-head"><img src="https://i.postimg.cc/4xvGVsC7/Whats-App-Image-2026-11-08-at-18-03-06.webp"><h2>💻 <span>CLOZEL STORE</span> - ORDINATEURS</h2><p>Pour le travail, les études, le bureau - Neufs scellés, garantie 1 an</p></div>
+<div class="grid">
+<div class="card"><div class="card-img">💻<span class="badge">PROMO</span></div><div class="card-body"><h4>Lenovo IdeaPad Slim 3 15AMN8 AMD Ryzen 5</h4><p>Portable - Léger</p><div class="price">395.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20Lenovo%20IdeaPad%20Slim%203" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">💻<span class="badge2">TOP VENTE</span></div><div class="card-body"><h4>HP ZBook Firefly 14 G8 Workstation Core i5-1145G7</h4><p>16GB RAM, SSD 256GB, 14" FHD, Win11 Pro</p><div><span class="price">280.000 CFA</span> <span class="old">295.000 CFA</span></div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20ZBook%20Firefly%2014%20-%20280.000%20CFA" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">💻</div><div class="card-body"><h4>HP ProBook 450 G11 Intel Core Ultra 5 125U</h4><p>PC Pro - Bureautique</p><div class="price">1.995.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20ProBook%20450" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">💻</div><div class="card-body"><h4>PC HP Envy 14 x360 14-es0013dx Intel Core</h4><p>Tactile Convertible</p><div class="price">565.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20Envy%2014" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">💻</div><div class="card-body"><h4>Lenovo Legion Pro 5 16IAX10H Core Ultra 7</h4><p>PC Pro / Gamer</p><div class="price">1.465.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20Lenovo%20Legion%20Pro%205" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🎮</div><div class="card-body"><h4>HP HyperX OMEN 15-GA0004N Core i7</h4><p>PC Gamer / Pro</p><div class="price">1.195.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20HyperX%20OMEN%2015" target="_blank">Commander</a></div></div>
+</div>
+</div>
+<div class="page" id="imp">
+<div class="cat-head"><img src="https://i.postimg.cc/4xvGVsC7/Whats-App-Image-2026-11-08-at-18-03-06.webp"><h2>🖨️ <span>CLOZEL STORE</span> - IMPRIMANTES</h2><p>Imprimantes neuves - Installation offerte à l'achat</p></div>
+<div class="grid">
+<div class="card"><div class="card-img">🖨️</div><div class="card-body"><h4>Imprimante HP Color LaserJet Pro 3303fdw</h4><p>Couleur - Laser - Pro</p><div class="price">215.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%203303fdw" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🖨️</div><div class="card-body"><h4>Imprimante HP Color LaserJet Pro MFP 3303</h4><p>Multifonction Couleur</p><div class="price">380.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%203303" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🖨️</div><div class="card-body"><h4>Imprimante HP Laser MFP 137fnw Noir/Blanc</h4><p>WiFi - Bureautique</p><div class="price">330.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20137fnw" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🖨️</div><div class="card-body"><h4>Imprimante HP LaserJet Pro MFP M179fnw</h4><p>Couleur Compact</p><div class="price">315.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20M179fnw" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🖨️</div><div class="card-body"><h4>Imprimante HP LaserJet Pro MFP M127fnw</h4><p>Noir/Blanc</p><div class="price">205.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20HP%20M127fnw" target="_blank">Commander</a></div></div>
+</div>
+</div>
+<div class="page" id="gadgets">
+<div class="cat-head"><img src="https://i.postimg.cc/4xvGVsC7/Whats-App-Image-2026-11-08-at-18-03-06.webp"><h2>🎧 <span>CLOZEL STORE</span> - GADGETS</h2><p>Petits accessoires qui changent tout - Stock disponible</p></div>
+<div class="grid">
+<div class="card"><div class="card-img">⌨️</div><div class="card-body"><h4>Clavier + Souris sans fil HP</h4><p>Ensemble sans fil</p><div class="price">16.500 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20Clavier%20Souris%20HP" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🖱️</div><div class="card-body"><h4>Souris sans fil Logitech M186</h4><p>Authentique</p><div class="price">8.500 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20Souris%20Logitech%20M186" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🧹</div><div class="card-body"><h4>CLEANER PC</h4><p>Nettoyage PC</p><div class="price">3.500 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20CLEANER%20PC" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🎮</div><div class="card-body"><h4>Manette Xbox 360 Windows sans fil</h4><p>Gaming</p><div class="price">30.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20Manette%20Xbox%20360" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">💿</div><div class="card-body"><h4>Office Windows Authentique</h4><p>Licence Officielle</p><div class="price">30.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20Office%20Windows" target="_blank">Commander</a></div></div>
+<div class="card"><div class="card-img">🪟</div><div class="card-body"><h4>Licence Windows 10 Pro Authentique</h4><p>Licence Officielle</p><div class="price">20.000 CFA</div><a class="order" href="https://wa.me/2290129783460?text=Je%20veux%20Licence%20Windows%2010%20Pro" target="_blank">Commander</a></div></div>
+</div>
+</div>
+<div class="page" id="services">
+<div class="cat-head"><img src="https://i.postimg.cc/4xvGVsC7/Whats-App-Image-2026-11-08-at-18-03-06.webp"><h2>🔧 <span>CLOZEL STORE</span> - NOS SERVICES</h2><p>Par Clozel DSS - À domicile ou à la boutique - Abomey-Calavi / Cotonou</p></div>
+<div class="svc"><span class="tag">SERVICE N°1 - LE PLUS DEMANDÉ</span><h3>🪟 Installation Système d'Exploitation</h3><p>Installation Windows 10 / Windows 11 Pro, drivers, mises à jour, activation, optimisation pour que ton PC soit rapide comme neuf. Pour PC neuf ou ancien PC lent.<br><br>✅ Windows 10 / 11 Pro<br>✅ Drivers + Mises à jour<br>✅ Nettoyage + Optimisation<br>✅ Antivirus de base</p><div class="price">Prix sur WhatsApp</div><a href="https://wa.me/2290129783460?text=Salut%20Clozel%2C%20je%20veux%20une%20installation%20Windows" target="_blank">Demander le prix 💬</a></div>
+<div class="svc"><span class="tag">SERVICE N°2</span><h3>💻 Installation Logiciels d'Application</h3><p>Installation de tous tes logiciels : Office, Photoshop, AutoCAD, logiciels de comptabilité, logiciels scolaires, jeux, etc. Avec configuration complète.<br><br>✅ Microsoft Office Word Excel PowerPoint<br>✅ Adobe Photoshop / Illustrator<br>✅ Logiciels Pro & Scolaires<br>✅ Jeux PC</p><div class="price">Prix sur WhatsApp</div><a href="https://wa.me/2290129783460?text=Salut%20Clozel%2C%20je%20veux%20installer%20des%20logiciels" target="_blank">Demander le prix 💬</a></div>
+<div class="svc"><span class="tag">SERVICE N°3 - EXPERT</span><h3>🛠️ Montage d'Ordinateur / PC Gamer</h3><p>Tu veux un PC puissant ? Je monte ton PC de A à Z : choix des pièces, assemblage, câblage propre, installation Windows, test complet. PC Bureautique ou PC Gamer sur mesure.<br><br>✅ Conseil choix des pièces<br>✅ Montage propre + Câblage<br>✅ Installation Windows + Drivers<br>✅ Test + Garantie montage</p><div class="price">Devis Gratuit</div><a href="https://wa.me/2290129783460?text=Salut%20Clozel%2C%20je%20veux%20monter%20un%20PC%20-%20Devis%20gratuit" target="_blank">Demander un Devis Gratuit 💬</a></div>
+</div>
+<div class="footer"><b>CLOZEL STORE</b> © 2026 - PC • High-Tech • Installation • Montage<br>Abomey-Calavi - Cotonou - Bénin | 01 29 78 34 60</div>
+<script>
+function showPage(id,btn){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+if(btn) btn.classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
